@@ -41,10 +41,10 @@ if uploaded_file is not None:
 
 
 
-import streamlit as st
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
+# import streamlit as st
+# import pandas as pd
+# import matplotlib.pyplot as plt
+# import seaborn as sns
 
 # Title of the Streamlit app
 st.title('Excel Data Visualization')
