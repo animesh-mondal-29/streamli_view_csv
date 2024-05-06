@@ -2,45 +2,6 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
- 
-# Title of the Streamlit app
-st.title('Excel Data Visualization')
- 
-# Upload Excel file
-uploaded_file = st.file_uploader("Upload Excel file", type=["xlsx"])
- 
-# Function to read Excel file and plot graph
-def plot_graph(data):
-    # Read Excel file into a DataFrame
-    df = pd.read_excel(data)
-    # Display the DataFrame
-    st.write("Data from Excel file:")
-    st.write(df)
-    # Get column names
-    column_names = list(df.columns)
-    # Select the first two columns for plotting
-    x_axis = "Project Name"
-    y_axis = st.selectbox("Select Y-axis", column_names[1:])
-    # Plot the graph using seaborn
-    st.write("Graph:")
-    sns.set_style("whitegrid")
-    ax = sns.barplot(x=x_axis, y=y_axis, data=df)
-    ax.set_ylim(0, 10)  
-    plt.xticks(rotation=90)
-    st.pyplot()
-    st.set_option('deprecation.showPyplotGlobalUse', False)
- 
- 
-# Check if file is uploaded
-if uploaded_file is not None:
-    plot_graph(uploaded_file)
-
-
-
-# import streamlit as st
-# import pandas as pd
-# import matplotlib.pyplot as plt
-# import seaborn as sns
 
 # Title of the Streamlit app
 st.title('Excel Data Visualization')
@@ -77,46 +38,3 @@ def plot_graph(data):
 # Check if file is uploaded
 if uploaded_file is not None:
     plot_graph(uploaded_file)
-
-
-
-# import streamlit as st
-# import pandas as pd
-# import matplotlib.pyplot as plt
-# import seaborn as sns
-
-# # Title of the Streamlit app
-# st.title('Excel Data Visualization')
-
-# # Path to the Excel file
-# excel_file_path = "Book2.xlsx"  # Replace "your_excel_file.xlsx" with the path to your Excel file
-
-# # Function to read Excel file and plot graph
-# def plot_graph(data):
-#     # Read Excel file into a DataFrame
-#     df = pd.read_excel(data)
-    
-#     # Display the DataFrame
-#     st.write("Data from Excel file:")
-#     st.write(df)
-    
-#     # Get column names
-#     column_names = list(df.columns)
-    
-#     # Select the first two columns for plotting
-#     x_axis = "Project Name"
-#     y_axis = st.selectbox("Select Y-axis", column_names[1:])
-    
-#     # Plot the graph using seaborn
-#     st.write("Graph:")
-#     sns.set_style("whitegrid")
-#     ax = sns.barplot(x=x_axis, y=y_axis, data=df)
-#     ax.set_ylim(0, 10)  # Set the y-axis limits from 0 to 10
-#     plt.xticks(rotation=90)
-#     st.pyplot()
-#     st.set_option('deprecation.showPyplotGlobalUse', False)
-
-# # Check if file path is provided
-# if excel_file_path:
-#     plot_graph(excel_file_path)
-
