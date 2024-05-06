@@ -31,7 +31,8 @@ def plot_graph(data):
     sns.barplot(x=x_axis, y=y_axis, data=df)
     plt.xticks(rotation=90)
     st.pyplot()
-    showPyplotGlobalUse = "false"
+    st.set_option('deprecation.showPyplotGlobalUse', False)
+
 
 # Check if file is uploaded
 if uploaded_file is not None:
