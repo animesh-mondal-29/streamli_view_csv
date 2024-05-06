@@ -28,7 +28,8 @@ def plot_graph(data):
     # Plot the graph using seaborn
     st.write("Graph:")
     sns.set_style("whitegrid")
-    sns.barplot(x=x_axis, y=y_axis, data=df)
+    ax = sns.barplot(x=x_axis, y=y_axis, data=df)
+    ax.set_ylim(0, 10)  
     plt.xticks(rotation=90)
     st.pyplot()
     st.set_option('deprecation.showPyplotGlobalUse', False)
